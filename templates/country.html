@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}About Your Country{% endblock %}
+{% block main %}
+	<h1>You've arrived in {{ country }}!</h1>
+		{% if error %}
+		<p>{{ error }}</p>
+		{% else %}
+		<p>Can you guess this country's capital?</p>
+		{% endif %}
+		<form method="post" action="/capital">
+			<input type="text" name="capital"/>
+			<input type="submit"/>			
+		</form>
+{% endblock %}
